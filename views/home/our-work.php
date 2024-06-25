@@ -1,10 +1,10 @@
 <div class="our_work">
-    <div class="full-container reveal">
-        <div class="col col-8 main_title">
+    <div class="full-container">
+        <div class="col col-8 main_title reveal">
             <h2>(Growth + Creativity)2 = विकास 2 + रचनात्मकता 2 + 2(Growth) (Creativity)</h2>
         </div>
         <div class="filter_section col col-12">
-            <div class="all_filters">
+            <div class="all_filters reveal">
                 <ul id="grid-filter">
                     <li data-category="*">View All</li>
                     <li data-category="design">Design</li>

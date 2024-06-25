@@ -111,32 +111,26 @@ $("#grid-filter li").click(function() {
 
 
 
-let reveal = document.querySelectorAll(".reveal") 
+let reveal = document.querySelectorAll(".reveal");
 
-reveal.forEach( (el) => {
-  let headings = el.querySelectorAll("h3, p")
-  
-  let tl = gsap.timeline ()
+reveal.forEach((el) => {
+  let headings = el.querySelectorAll("h3, h2, p, ul");
+
+  let tl = gsap.timeline()
     .from(headings, {
-      y: 80,
-      stagger: 0.05,
+      y: 120 ,
+      stagger: 0.09,
       opacity: 0,
       duration: 1,
       ease: "power3.out"
-    })
-    .from(btn, {
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out"
-    }, '-=0.6'
+    });
+
+  ScrollTrigger.create({
+    trigger: el,
+    start: "center 100%",
+    end: "top 50%",
+    toggleActions: "play none none reverse",
+    animation: tl
+  });
   
-  ScrollTrigger.create ({
-		  trigger: el,
-			start: "center 100%", 
-      end:"top 50%",
-			markers: true,
-			toggleActions: "play none none reverse ",
-      animation:tl
-      })
-})
+});
